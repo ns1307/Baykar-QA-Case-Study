@@ -11,7 +11,7 @@ Bu proje, Baykar Web Yazılım Test Uzmanı pozisyonu için istenen Yazılım Te
 Baykar Kariyer (https://kariyer.baykartech.com/) web sitesi için kapsamlı test senaryoları hazırlanmış ve dökümante edilmiştir. Toplamda 84 test case oluşturulmuş olup testlerin tümü başarılıdır.
 
 ## ⚙️ Yük Testleri
-Python ve Locust kullanılarak Baykar Kariyer (https://kariyer.baykartech.com/) web sitesi için yük ve performans testi senaryolarıyla birlikte yazılmıştır.
+Locust ve JMeter kullanılarak Baykar Kariyer (https://kariyer.baykartech.com/) web sitesi için yük ve performans testleri yazılmıştır. Locust ve JMeter ile çok fazla sayıda kullanbıcının siteye erişmeye çalıştığında, sitenin bu isteklere cevap verebilirliği ölçülmüştür.
 
 ## ⚡ Otomasyon Testleri
 Projede istenen 3 özellik BDD yaklaşımıyla senaryolandırılarak otomasyon testleri oluşturulmuştur. Testler oluşturulurken POM, DRY, SOLID, OOP yaklaşımlarına uyulmuştur. 
@@ -51,14 +51,16 @@ Baykar-QA-Case-Study/
 │      │   │    ├── overview-steps.html/            # Test adımlarına göre koşum raporu
 │      │   │    └── overview-tags.html/             # Taglere göre koşum raporu
 │      │   │    
-│      │   └── Screenshots/         # Başarısız olan testlerden sonra alınan ekran görüntüleri
+│      │   └── Screenshots/            # Başarısız olan testlerden sonra alınan ekran görüntüleri
 │      │       
 │      ├── pom.xml                      # Maven Bağımlılıkları
 │      └── configuration.properties
 │
 │
-└── Baykar Load Tests 
-
+└── Baykar Load Tests                  # Yük ve Performans Testleri     
+       │
+       ├── Locust
+       └── JMeter
 ```
 
 ## 🎯 Test Senaryoları
