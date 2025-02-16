@@ -2,6 +2,8 @@ package utilities;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Properties;
 
 public class ConfigReader {
@@ -19,7 +21,7 @@ public class ConfigReader {
 
 
         } catch (IOException e) {
-            System.out.println("properties dosyasi okunamadi");
+            System.out.println("Properties file not found");
 
         }
 
@@ -29,6 +31,11 @@ public class ConfigReader {
 
         return properties.getProperty(key);
 
+    }
+
+    public static List<String> getPropertyAsList(String key) {
+        String propertyString = properties.getProperty(key); // Varsayılan değer
+        return Arrays.asList(propertyString.split(",")); // Virgüle göre ayır ve listeye çevir
     }
 
 

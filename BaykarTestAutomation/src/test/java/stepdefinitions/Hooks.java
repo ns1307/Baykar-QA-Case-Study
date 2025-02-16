@@ -5,20 +5,23 @@ import io.cucumber.java.Before;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import utilities.Driver;
+import utilities.Helper;
 
 public class Hooks {
 
     @Before
     public void setUp() {
-        System.out.println("Test başlıyor...");
         Driver.getDriver(); // Initialize the driver
     }
 
     @After
     public void tearDown(Scenario scenario) {
-        if (scenario.isFailed()) {
-            final byte[] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
-            scenario.attach(screenshot, "image/png", "Screenshot of Failure");
+        try {
+            Helper.getScreenshot(scenario.getName());
         }
+        catch (Exception e) {
+            System.out.println("Fail in saving screenshot.");
+        }
+        Driver.quitDriver();
     }
 }

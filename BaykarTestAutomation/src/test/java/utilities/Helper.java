@@ -76,9 +76,8 @@ public class Helper {
         return elemTexts;
     }
 
-    //   HARD WAIT WITH THREAD.SLEEP
-//   waitFor(5);  => waits for 5 second
-    public static void bekle(int saniye) {
+    //HARD WAIT WITH THREAD.SLEEP
+    public static void wait(int saniye) {
         try {
             Thread.sleep(saniye * 1000);
         } catch (InterruptedException e) {
@@ -114,8 +113,17 @@ public class Helper {
                 element.click();
                 return;
             } catch (WebDriverException e) {
-                bekle(1);
+                wait(1);
             }
+        }
+    }
+
+    public static void waitForElementToLoad(long timeout, By by){
+        try {
+            WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
+            wait.until(ExpectedConditions.presenceOfElementLocated(by));
+        } catch (Throwable error) {
+            System.out.println("Timeout waiting for Page Load Request to complete after " + timeout + " seconds");
         }
     }
 
