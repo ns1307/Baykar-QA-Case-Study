@@ -45,19 +45,19 @@ Baykar-QA-Case-Study/
 │      │           
 │      │          
 │      ├── target/   # Sadece lokalde bulunur
-│      │   └── reports/                # Test Raporları
+│      │   └── reports/                 # Test Raporları
 │      │   │    ├── overview-failure.html/          # Hata Raporu
 │      │   │    ├── overview-features.html/         # Test edilen özelliklere göre  koşum raporu
 │      │   │    ├── overview-steps.html/            # Test adımlarına göre koşum raporu
 │      │   │    └── overview-tags.html/             # Taglere göre koşum raporu
 │      │   │    
-│      │   └── Screenshots/            # Başarısız olan testlerden sonra alınan ekran görüntüleri
+│      │   └── Screenshots/             # Başarısız olan testlerden sonra alınan ekran görüntüleri
 │      │       
 │      ├── pom.xml                      # Maven Bağımlılıkları
 │      └── configuration.properties
 │
 │
-└── Baykar Load Tests                  # Yük ve Performans Testleri     
+└── Baykar Load Tests                   # Yük ve Performans Testleri     
        │
        ├── Locust
        └── JMeter
